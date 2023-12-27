@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #98a5ad;
+            font-family: 'Times New Roman', Times, serif;
+        }.container {
+            width: 303px;
+            margin: 0 auto;
+            padding: 19px;
+            background-color: rgb(239, 232, 232);
+        }label {
+            font-weight: normal;
+            color:gray;
+        }input[type="text"], input[type="text"], textarea {
+            width: 93%;
+            padding: 9px;
+            margin-bottom: 12px;
+            border: 1px solid #f0f0f0;
+            background-color: #f0f0f0;
+        }button {
+            background-color: #177dbd;
+            border: 2px solid #e7edf1;
+            color:white;
+        }.alert {
+            display: none;
+            background-color: #168bd9;
+            color: white;
+            padding: 13px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="transaction-form">
+            <table>
+                <label for="kode">kode:</label>
+                    <input type="text" id="kode" name="kode">
+
+                        <label for="barang">barang:</label>
+                    <input type="text" id="barang" name="barang">
+
+                 <label for="harga">harga:</label>
+                <textarea type="text" id="harga" name="harga"></textarea>
+
+            <button type="submit">submit</button>
+        </table>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("transaction-form");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                        const kode = document.getElementById("kode").value;
+                        const barang = document.getElementById("barang").value;
+                        const harga = document.getElementById("harga").value;
+
+                if (!kode||  !barang || !harga) {
+                    alert("Anda harus mengisi data pembelian dengan lengkap!"); 
+                } else {
+                    alert("Pembelian berhasil!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
